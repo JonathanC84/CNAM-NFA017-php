@@ -12,12 +12,12 @@ echo $text2."<br>\n";
 
 //interpolation (obligatoirement avec "")
 $temperature = 10.5;
-$report = "La température actuelle est de $temperature °C.";
+$report = "La température actuelle est de $temperature °C";
 
 echo $report."<br>\n";
 
 //variante avec {} si l'on doit coller du texte à la variable
-$report = "La température actuelle est de {$temperature}°C.";
+$report = "La température actuelle est de {$temperature}°C";
 
 echo $report."<br>\n";
 
