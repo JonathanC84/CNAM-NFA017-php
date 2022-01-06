@@ -40,3 +40,10 @@ $referendum = null; //plutôt qu'initier la variable avec false ou true
 
 echo $referendum;
 echo '<br>';
+
+//supprimer une variable
+
+//unset($referendum);
+
+//echo $referendum;
+//echo '<br>';
