@@ -43,21 +43,23 @@ dump($hand);
 $totalCartes = count($hand);
 
 $tirage1=random_int(1,5);
-$tirage2=random_int(1,5);
+$tirage2=random_int(1,4);
 
 dump($tirage1);
 dump($tirage2);
 
-echo "{$tirage1} et {$tirage2} ont été tirés.<br>\n";
+echo "Les cartes {$tirage1} et {$tirage2} ont été tirées.<br>\n";
 
 if ($tirage1==$tirage2) {
         echo "Le même nombre a été tiré 2 fois, le programme s'arrête.<br>\n";
         exit();
 } else {
-        $carte1=array_slice($hand,$tirage1-1,1);
-        $carte2=array_slice($hand,$tirage2-1,1);
+        $carte1=array_splice($hand,$tirage1-1,1);
         dump($carte1);
+        dump($hand);
+        $carte2=array_splice($hand,$tirage2-1,1);
         dump($carte2);
+        dump($hand);
         echo "Les cartes jouées sont {$carte1[0]} et {$carte2[0]}.<br>\n";
 }
 
