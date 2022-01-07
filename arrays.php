@@ -93,3 +93,33 @@ if (!in_array('Ananas',$bigList)) {
 if (in_array('Datte',$bigList))  {
     echo "Il y a des dattes dans la liste.<br>\n";
 }
+
+//tableau à index alpha-numérique
+//coupe 'clé' => 'valeur'
+$data=[
+    'nom'=>'Lorem',
+    'prenom'=>'Toto',
+    'age'=>18,
+    'email'=>'toto.lorem@example.com',
+    'newletter'=>true,
+];
+
+dump($data);
+
+//accès en lecture
+echo "Email : {$data['email']}";
+
+//accès en écriture
+$data['age']=12;
+
+dump($data);
+
+//ajout d'un couple clé/valeur
+$data['spammer']=true;
+
+dump($data);
+
+//suppression d'un couple clé/valeur
+unset($data['spammer']);
+
+dump($data);
