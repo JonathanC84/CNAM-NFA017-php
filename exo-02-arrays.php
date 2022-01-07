@@ -59,15 +59,18 @@ if ($tirage1==$tirage2) {
         dump($carte1);
         dump($carte2);
         echo "Les cartes jouées sont {$carte1[0]} et {$carte2[0]}.<br>\n";
-        $valeurCarte1=(int) $carte1[0];
-        $valeurCarte2=(int) $carte2[0];
-        dump($valeurCarte1);
-        dump($valeurCarte2);
-        if ($valeurCarte1==$valeurCarte2) {
-                echo "Égalité.<br>\n";
-        } elseif (($valeurCarte2!=1)&&($valeurCarte1==1||$valeurCarte1>$valeurCarte2)) {
-                echo "{$carte1[0]} l'emporte sur {$carte2[0]}.<br>\n";
-        } else {
-                echo "{$carte2[0]} l'emporte sur {$carte1[0]}.<br>\n";
-        } 
 }
+
+$valeurCarte1=(int) $carte1[0];
+$valeurCarte2=(int) $carte2[0];
+
+dump($valeurCarte1);
+dump($valeurCarte2);
+
+if ($valeurCarte1==$valeurCarte2) {
+        echo "Égalité.<br>\n";
+} elseif (($valeurCarte2!=1)&&($valeurCarte1==1||$valeurCarte1>$valeurCarte2)) {
+        echo "{$carte1[0]} l'emporte sur {$carte2[0]}.<br>\n";
+} else {
+        echo "{$carte2[0]} l'emporte sur {$carte1[0]}.<br>\n";
+} 
