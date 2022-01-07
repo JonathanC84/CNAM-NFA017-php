@@ -63,8 +63,8 @@ dump($hand);
 
 
 //remplacement du nom des cartes figures pour l'affichage
-$nomCarte1=(string) $carte1[0];
-$nomCarte2=(string) $carte2[0];
+$nomCarte1=$carte1[0];
+$nomCarte2=$carte2[0];
 dump($nomCarte1);
 dump($nomCarte2);
 
@@ -93,4 +93,4 @@ if ($valeurCarte1==$valeurCarte2) {
         echo "{$nomCarte1} l'emporte sur {$nomCarte2}.<br>\n";
 } else {
         echo "{$nomCarte2} l'emporte sur {$nomCarte1}.<br>\n";
-} 
+}
