@@ -19,12 +19,12 @@ $hand = [
 
 dump($hand);
 
-$tirage = random_int(0,4);
+$tirage = random_int(1,5);
 
 dump($tirage);
 
-$carteJouee = array_splice ($hand, $tirage, 1);
+$carteJouee = array_splice ($hand, $tirage-1, 1);
 
 dump($carteJouee);
 
-echo "La carte jouée est {$carteJouee[0]}.<br>\n";
+echo "La carte jouée est la carte n°{$tirage}, {$carteJouee[0]}.<br>\n";
