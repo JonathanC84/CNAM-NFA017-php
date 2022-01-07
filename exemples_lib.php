@@ -1,4 +1,7 @@
 <?php
+if (!defined('STDIN')) {
+  define('STDIN', fopen('php://stdin', 'r'));
+}
 require __DIR__.'/lib-user-input.php';
 $answer = user_input_get_answer('Comment vous appelez-vous ?');
 $choices = ['foo', 'bar', 'baz'];
