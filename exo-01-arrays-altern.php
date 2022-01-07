@@ -27,7 +27,7 @@ echo "Il y a {$total} cartes dans la main.<br>\n";
 
 echo "On choisit aléatoirement un chiffre en 1 et le nombre total de cartes.<br>\n";
 
-$tirage = random_int(1,count($hand));
+$tirage = random_int(1,$total);
 
 dump($tirage);
 
