@@ -36,33 +36,51 @@ $hand = [
         '7 de trèfle',
         '10 de carreau',
         '11 de trèfle',
-    ];
+];
 
 dump($hand);
 
 $totalCartes = count($hand);
 
-$tirage1=random_int(1,5);
-$tirage2=random_int(1,4);
+
+//tirage de deux entiers aléatoires
+$tirage1=random_int(1,$totalCartes);
+$tirage2=random_int(1,$totalCartes-1);
 
 dump($tirage1);
 dump($tirage2);
 
 echo "Les cartes {$tirage1} et {$tirage2} ont été tirées.<br>\n";
 
-if ($tirage1==$tirage2) {
-        echo "Le même nombre a été tiré 2 fois, le programme s'arrête.<br>\n";
-        exit();
-} else {
-        $carte1=array_splice($hand,$tirage1-1,1);
-        dump($carte1);
-        dump($hand);
-        $carte2=array_splice($hand,$tirage2-1,1);
-        dump($carte2);
-        dump($hand);
-        echo "Les cartes jouées sont {$carte1[0]} et {$carte2[0]}.<br>\n";
-}
 
+//utilisation des entiers aléatoires pour retirer les cartes de la main
+$carte1=array_splice($hand,$tirage1-1,1);
+dump($carte1);
+dump($hand);
+$carte2=array_splice($hand,$tirage2-1,1);
+dump($carte2);
+dump($hand);
+
+
+//remplacement du nom des cartes figures pour l'affichage
+$nomCarte1=(string) $carte1[0];
+$nomCarte2=(string) $carte2[0];
+dump($nomCarte1);
+dump($nomCarte2);
+
+$nomCarte1=preg_replace('/^1 /', 'As ', $nomCarte1);
+$nomCarte1=preg_replace('/11 /', 'Valet ', $nomCarte1);
+$nomCarte1=preg_replace('/12 /', 'Dame ', $nomCarte1);
+$nomCarte1=preg_replace('/13 /', 'Roi ', $nomCarte1);
+$nomCarte2=preg_replace('/^1 /', 'As ', $nomCarte2);
+$nomCarte2=preg_replace('/11 /', 'Valet ', $nomCarte2);
+$nomCarte2=preg_replace('/12 /', 'Dame ', $nomCarte2);
+$nomCarte2=preg_replace('/13 /', 'Roi ', $nomCarte2);
+
+echo "Les cartes jouées sont {$nomCarte1} et {$nomCarte2}.<br>\n";
+
+
+//comparaison des valeurs des deux cartes
 $valeurCarte1=(int) $carte1[0];
 $valeurCarte2=(int) $carte2[0];
 
@@ -72,7 +90,7 @@ dump($valeurCarte2);
 if ($valeurCarte1==$valeurCarte2) {
         echo "Égalité.<br>\n";
 } elseif (($valeurCarte2!=1)&&($valeurCarte1==1||$valeurCarte1>$valeurCarte2)) {
-        echo "{$carte1[0]} l'emporte sur {$carte2[0]}.<br>\n";
+        echo "{$nomCarte1} l'emporte sur {$nomCarte2}.<br>\n";
 } else {
-        echo "{$carte2[0]} l'emporte sur {$carte1[0]}.<br>\n";
+        echo "{$nomCarte2} l'emporte sur {$nomCarte1}.<br>\n";
 } 
