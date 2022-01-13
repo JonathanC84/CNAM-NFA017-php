@@ -76,3 +76,15 @@ switch ($group) {
     default:
         echo "Vous n'êtes dans aucun groupe.<br>\n";
 }
+
+/* yoda conditions
+
+$value=15;
+if (15=$value) {
+    echo "La valeur est égale à 15<br>\n";
+}
+
+retourne une erreur, car erreur de syntaxe :
+= : affectation, == : égalité
+
+*/
