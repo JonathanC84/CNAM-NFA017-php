@@ -69,13 +69,13 @@ dump($nomCarte1);
 dump($nomCarte2);
 
 $nomCarte1=preg_replace('/^1 /', 'As ', $nomCarte1);
-$nomCarte1=preg_replace('/11 /', 'Valet ', $nomCarte1);
-$nomCarte1=preg_replace('/12 /', 'Dame ', $nomCarte1);
-$nomCarte1=preg_replace('/13 /', 'Roi ', $nomCarte1);
+$nomCarte1=preg_replace('/^11 /', 'Valet ', $nomCarte1);
+$nomCarte1=preg_replace('/^12 /', 'Dame ', $nomCarte1);
+$nomCarte1=preg_replace('/^13 /', 'Roi ', $nomCarte1);
 $nomCarte2=preg_replace('/^1 /', 'As ', $nomCarte2);
-$nomCarte2=preg_replace('/11 /', 'Valet ', $nomCarte2);
-$nomCarte2=preg_replace('/12 /', 'Dame ', $nomCarte2);
-$nomCarte2=preg_replace('/13 /', 'Roi ', $nomCarte2);
+$nomCarte2=preg_replace('/^11 /', 'Valet ', $nomCarte2);
+$nomCarte2=preg_replace('/^12 /', 'Dame ', $nomCarte2);
+$nomCarte2=preg_replace('/^13 /', 'Roi ', $nomCarte2);
 
 echo "Les cartes jouées sont {$nomCarte1} et {$nomCarte2}.<br>\n";
 

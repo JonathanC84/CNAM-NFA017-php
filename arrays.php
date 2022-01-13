@@ -17,11 +17,15 @@ $fruits=[
 
 dump($fruits);
 
+//accès en lecture
+//affichage avec l'index []
 //attention à l'index (n-1)
+//accolades obligatoires à cause des crochets (@ apparemment ce n'est plus vrai avec la nouvelle version)
 echo "fruit n°1 : {$fruits[0]}<br>\n";
 echo "fruit n°2 : {$fruits[1]}<br>\n";
 echo "fruit n°3 : {$fruits[2]}<br>\n";
 
+//accès en écriture
 //changement d'un élément du tableau
 $fruits[0]='Abricot';
 
@@ -38,12 +42,13 @@ echo "Il y a {$size} fruits.<br>\n";
 //on peut écrire directement :
 //echo "Il y a ".count($fruits)." fruits.<br>\n";
 
-//ajout d'éléments
+//ajout d'éléments à la suite
 $fruits[]='Datte';
 $fruits[]='Fraise';
 
 dump($fruits);
 
+//compteur d'éléments dans un tableau
 $size = count($fruits);
 echo "Il y a {$size} fruits.<br>\n";
 
@@ -71,6 +76,14 @@ $fruitRemoved = array_splice($fruits, 1, 1);
 dump($fruitRemoved); //contient l'élément supprimé de $fruits
 dump($fruits);
 
+//insérer un tableau dans un autre en décalant les index
+$toInsert=['a','b'];
+$fruitRemoved = array_splice($fruits, 3, 0, $toInsert);
+
+//cette syntaxe permet de supprimer l'élément sans le conserver dans une variable
+array_splice($fruits, 1, 1);
+
+
 //unset permet de retirer de la mémoire n'importe quelle variable
 //plus simple à utiliser
 //ATTENTION : ne réindexe pas, à bannir dans une boucle for et un compteur
@@ -94,8 +107,9 @@ if (in_array('Datte',$bigList))  {
     echo "Il y a des dattes dans la liste.<br>\n";
 }
 
-//tableau à index alpha-numérique
-//coupe 'clé' => 'valeur'
+//tableau à clé, ou index alpha-numérique
+//couple 'clé' => 'valeur'
+//aussi appelé dictionnaire ou hash map
 $data=[
     'nom'=>'Lorem',
     'prenom'=>'Toto',
@@ -120,6 +134,7 @@ $data['spammer']=true;
 dump($data);
 
 //suppression d'un couple clé/valeur
+//array_splice ne fonctionne pas
 unset($data['spammer']);
 
 dump($data);
