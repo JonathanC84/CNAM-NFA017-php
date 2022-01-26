@@ -13,6 +13,26 @@ Vous devez le masquez s'il n'est pas pertinent :
 
 require __DIR__.'/vendor/autoload.php';
 
+dump($_POST);
+
+$errors = [];
+
+if ($_POST) {
+    if (empty($_POST['alias'])) {
+        // le champ alias est vide
+        $errors['alias'] = 'Vous devez renseigner ce champ';
+    }
+    if (empty($_POST['email'])) {
+        // le champ email est vide
+        $errors['email'] = 'Vous devez renseigner ce champ';
+    }
+    if (empty($_POST['password'])) {
+        // le champ password est vide
+        $errors['password'] = 'Vous devez renseigner ce champ';
+    }
+}
+
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,22 +45,33 @@ require __DIR__.'/vendor/autoload.php';
     <h1>Exo</h1>
 
     <div class="confirmation">
-        Votre compte a bien été enregistré.
+        <?php if (!empty($_POST)&&empty($errors)):?>
+            <p>Votre compte a bien été enregistré.</p>
+        <?php endif ?>
     </div>
 
     <form action="" method="post">
         <div>
             <div class="error">
+                <?php if (isset($errors['alias'])): ?>
+                    <?= $errors['alias'] ?>
+                <?php endif ?>
             </div>
             <input type="text" name="alias" placeholder="votre nom d'utilisateur">
         </div>
         <div>
             <div class="error">
+                <?php if (isset($errors['email'])): ?>
+                    <?= $errors['email'] ?>
+                <?php endif ?>
             </div>
             <input type="email" name="email" placeholder="votre mail">
         </div>
         <div>
             <div class="error">
+                <?php if (isset($errors['password'])): ?>
+                    <?= $errors['password'] ?>
+                <?php endif ?>
             </div>
             <input type="password" name="password" placeholder="votre mot de passe">
         </div>
