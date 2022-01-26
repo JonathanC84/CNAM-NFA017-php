@@ -45,7 +45,7 @@ if ($_POST) {
     <h1>Exo</h1>
 
     <div class="confirmation">
-        <?php if (!empty($_POST) && empty($errors)):?>
+        <?php if ($_POST && !$errors):?>
             <p>Votre compte a bien été enregistré.</p>
         <?php endif ?>
     </div>
