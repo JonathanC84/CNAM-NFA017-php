@@ -45,7 +45,7 @@ if ($_POST) {
     <h1>Exo</h1>
 
     <div class="confirmation">
-        <?php if (!empty($_POST)&&empty($errors)):?>
+        <?php if (!empty($_POST) && empty($errors)):?>
             <p>Votre compte a bien été enregistré.</p>
         <?php endif ?>
     </div>
@@ -57,7 +57,7 @@ if ($_POST) {
                     <?= $errors['alias'] ?>
                 <?php endif ?>
             </div>
-            <input type="text" name="alias" placeholder="votre nom d'utilisateur">
+            <input type="text" name="alias" value="<?= htmlentities($_POST['alias'] ?? '') ?>" placeholder="votre nom d'utilisateur">
         </div>
         <div>
             <div class="error">
@@ -65,7 +65,7 @@ if ($_POST) {
                     <?= $errors['email'] ?>
                 <?php endif ?>
             </div>
-            <input type="email" name="email" placeholder="votre mail">
+            <input type="email" name="email" value="<?= htmlentities($_POST['email'] ?? '') ?>" placeholder="votre mail">
         </div>
         <div>
             <div class="error">
@@ -73,7 +73,7 @@ if ($_POST) {
                     <?= $errors['password'] ?>
                 <?php endif ?>
             </div>
-            <input type="password" name="password" placeholder="votre mot de passe">
+            <input type="password" name="password" value="<?= htmlentities($_POST['password'] ?? '') ?>" placeholder="votre mot de passe">
         </div>
         <div>
             <button type="submit">Valider</button>
