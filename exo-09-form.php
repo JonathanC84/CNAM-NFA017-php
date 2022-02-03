@@ -39,10 +39,10 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo</title>
+    <title>Formulaire</title>
 </head>
 <body>
-    <h1>Exo</h1>
+    <h1>Nouvel utilisateur</h1>
 
     <div class="confirmation">
         <?php if ($_POST && !$errors):?>
